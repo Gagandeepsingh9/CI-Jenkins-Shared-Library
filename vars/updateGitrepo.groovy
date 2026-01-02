@@ -3,7 +3,7 @@ def call(Map config=[:]){
     def docker_image = config.docker_image ?: error("Enter Docker Image Name to update in k8s manifest file")
     def image_tag = config.image_tag ?: error("Enter Image tag to update on manifest file")
     def k8s_deployment_file_path = config.k8s_deployment_file_path ?: error("Enter k8s deployment file path on github")
-    def github_repo_name = config.github_repo ?: error("Enter github repo name to update")
+    def github_repo_name = config.github_repo_name ?: error("Enter github repo name to update")
     def git_branch_name = config.git_branch_name ?: error("Enter github repo branch name")
 
     withCredentials([usernamePassword(
